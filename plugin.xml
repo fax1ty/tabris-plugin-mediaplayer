@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<plugin xmlns='http://apache.org/cordova/ns/plugins/1.0' xmlns:android='http://schemas.android.com/apk/res/android' id='tabris-plugin-mediaplayer' version='0.0.2'>
+<plugin xmlns='http://apache.org/cordova/ns/plugins/1.0'
+  xmlns:android='http://schemas.android.com/apk/res/android' id='tabris-plugin-mediaplayer' version='0.0.3'>
 
   <name>Tabris.js MediaPlayer Plugin</name>
   <description>???</description>
@@ -18,7 +19,6 @@
   <platform name='android'>
     <config-file target='AndroidManifest.xml' parent='/manifest/application'>
       <meta-data android:name='com.eclipsesource.tabris.android.HANDLER.ru.fax1ty.tabris.audioplayer' android:value='ru.fax1ty.tabris.audioplayer.AudioPlayerHandler' />
-
       <service android:enabled='true' android:name='ru.fax1ty.tabris.audioplayer.AudioPlayerService' android:exported='false' android:foregroundServiceType='mediaPlayback'>
         <intent-filter>
           <action android:name='ru.fax1ty.tabris.audioplayer.CREATE' />
@@ -32,6 +32,8 @@
       >
     </config-file>
 
+    <framework src="com.github.Semantive:waveform-android:v1.2" />
+
     <config-file target='AndroidManifest.xml' parent='/manifest'>
       <uses-permission android:name='android.permission.INTERNET' />
     </config-file>
@@ -41,6 +43,7 @@
     <source-file src='src/android/ru/fax1ty/tabris/audioplayer/AudioPlayerService.kt' target-dir='src/ru/fax1ty/tabris/audioplayer' />
     <source-file src='src/android/ru/fax1ty/tabris/audioplayer/IsPlayingProperty.kt' target-dir='src/ru/fax1ty/tabris/audioplayer' />
     <source-file src='src/android/ru/fax1ty/tabris/audioplayer/LoopProperty.kt' target-dir='src/ru/fax1ty/tabris/audioplayer' />
+    <source-file src='src/android/ru/fax1ty/tabris/audioplayer/PeeksProperty.kt' target-dir='src/ru/fax1ty/tabris/audioplayer' />
     <source-file src='src/android/ru/fax1ty/tabris/audioplayer/PositionProperty.kt' target-dir='src/ru/fax1ty/tabris/audioplayer' />
     <source-file src='src/android/ru/fax1ty/tabris/audioplayer/Utils.kt' target-dir='src/ru/fax1ty/tabris/audioplayer' />
   </platform>
