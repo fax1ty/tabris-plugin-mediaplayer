@@ -4,13 +4,7 @@
 
 ```ts
 let mediaPlayer = new MediaPlayer({ url: 'urlHere' });
-mediaPlayer.play();
-```
-
-or
-
-```ts
-new MediaPlayer({ url: 'urlhere', autoPlay: true });
+mediaPlayer.on('ready', ()=> mediaPlayer.play());
 ```
 
 ## Android

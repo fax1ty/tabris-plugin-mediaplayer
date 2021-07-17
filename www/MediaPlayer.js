@@ -50,7 +50,7 @@ class MediaPlayer extends tabris.NativeObject {
   }
 
   _listen(name, listening) {
-    if (name === 'error' || name === 'ready') {
+    if (['error', 'ready', 'complete'].includes(name)) {
       this._nativeListen(name, listening);
     } else {
       super._listen(name, listening);
@@ -61,16 +61,13 @@ class MediaPlayer extends tabris.NativeObject {
 tabris.NativeObject.defineEvents(MediaPlayer.prototype, {
   error: { native: true },
   ready: { native: true },
+  complete: { native: true }
 });
 
 tabris.NativeObject.defineProperties(MediaPlayer.prototype, {
   'url': {
     type: 'string',
     default: ''
-  },
-  'autoPlay': {
-    type: 'boolean',
-    default: false
   },
   'loop': {
     type: 'boolean',

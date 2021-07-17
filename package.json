@@ -1,6 +1,6 @@
 {
   "name": "tabris-plugin-mediaplayer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MediaPlayer plugin for Tabris.js",
   "cordova": {
     "id": "tabris-plugin-mediaplayer",
@@ -11,6 +11,6 @@
   "author": "fax1ty",
   "license": "MIT",
   "devDependencies": {
-    "tabris": "^3.5.0"
+    "tabris": "^3.7.2"
   }
 }

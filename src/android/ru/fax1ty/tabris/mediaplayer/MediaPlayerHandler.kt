@@ -11,9 +11,10 @@ class MediaPlayerHandler(private val scope: ActivityScope) : ObjectHandler<Media
 
     override val type = "ru.fax1ty.tabris.mediaplayer.MediaPlayer"
 
-    override fun create(id: String, properties: V8Object) = MediaPlayer(scope.activity, properties.getStringOrNull("url")
+
+    override fun create(id: String, properties: V8Object) = MediaPlayer(properties.getStringOrNull("url")
             ?: "", properties.getBooleanOrNull("loop")
-            ?: false, properties.getBooleanOrNull("autoPlay") ?: false)
+            ?: false)
 
     override fun call(mediaPlayer: MediaPlayer, method: String, properties: V8Object): Any? = when (method) {
         "play" -> mediaPlayer.play()

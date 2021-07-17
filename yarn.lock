@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-tabris@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/tabris/-/tabris-3.5.0.tgz#3cdb0d0ed6e33a8cd0ffc9f886da2ef0c279bf4b"
-  integrity sha512-HosrF0axp1mpNd6Q7+HVVKrnhGIaTEbfwL/4m9gAJc8CkR0AyU6LioSBFdSxJtPwxVch+/Vi/4Gz3om2uMo9tQ==
+tabris@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/tabris/-/tabris-3.7.2.tgz#2551d7e995abd210f70d2905db1b36d20f7e3ac1"
+  integrity sha512-7jMJfxocmhEccyaRYqmFgZVCkkJgnsyKxBIqnFjjOeMiG6pmvMwR87P49xW+vzy/n4EEJYTrWeJWqQd94q2cjQ==

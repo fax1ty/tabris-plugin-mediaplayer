@@ -12,6 +12,6 @@ declare global {
         setIsLooping(loop: boolean): void;
         getCurrentPosition(): number;
 
-        constructor(values: { url: string, loop?: boolean, autoPlay?: boolean });
+        constructor(values: { url: string, loop?: boolean });
     }
 }

@@ -1,17 +1,18 @@
 package ru.fax1ty.tabris.mediaplayer
 
-import android.app.Activity
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.net.Uri
 import java.io.File
 
-class MediaPlayer(activity: Activity, url: String, loop: Boolean, autoPlay: Boolean) {
+class MediaPlayer(url: String, loop: Boolean) {
 
-    var mediaPlayer: MediaPlayer? = MediaPlayer.create(activity.applicationContext, if (url.contains("http", true)) Uri.parse(url) else Uri.fromFile(File(url))).apply {
+    var mediaPlayer: MediaPlayer? = MediaPlayer().apply {
         setAudioAttributes(AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build())
+        val soundUrl = if (url.contains("http", true)) Uri.parse(url) else Uri.fromFile(File(url))
+        this.setDataSource(soundUrl.toString())
+        this.prepareAsync()
         isLooping = loop
-        if (autoPlay) start()
     }
 
     fun play() {
